@@ -153,6 +153,7 @@
     <Compile Include="Models\TextList.cs" />
     <Compile Include="Models\UserHeroCard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebUserControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
