@@ -131,6 +131,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DB\DbConnect.cs" />
     <Compile Include="DB\DButil.cs" />
     <Compile Include="Dialogs\ExceptionHandlerDialog.cs" />
@@ -153,7 +154,6 @@
     <Compile Include="Models\TextList.cs" />
     <Compile Include="Models\UserHeroCard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebUserControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
