@@ -124,7 +124,6 @@
   <ItemGroup>
     <Content Include="default.htm" />
     <Content Include="Global.asax" />
-    <Content Include="testpage.asp" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
