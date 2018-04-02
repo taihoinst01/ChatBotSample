@@ -124,6 +124,7 @@
   <ItemGroup>
     <Content Include="default.htm" />
     <Content Include="Global.asax" />
+    <Content Include="testpage.asp" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -131,7 +132,6 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DB\DbConnect.cs" />
     <Compile Include="DB\DButil.cs" />
     <Compile Include="Dialogs\ExceptionHandlerDialog.cs" />

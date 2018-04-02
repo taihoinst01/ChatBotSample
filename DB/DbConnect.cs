@@ -81,7 +81,12 @@ namespace ChatBotSample.DB
                     dlg.dlgType = rdr["DLG_TYPE"] as string;
                     dlg.dlgGroup = rdr["DLG_GROUP"] as string;
                     dlg.dlgOrderNo = rdr["DLG_ORDER_NO"] as string;
-                    
+
+                    Debug.WriteLine("* dlg.dlgId : " + dlg.dlgId);
+                    Debug.WriteLine("* dlg.dlgType : " + dlg.dlgType);
+                    Debug.WriteLine("* dlg.dlgGroup : " + dlg.dlgGroup);
+                    Debug.WriteLine("* dlg.dlgOrderNo : " + dlg.dlgOrderNo);
+
                     using (SqlConnection conn2 = new SqlConnection(connStr))
                     {
                         SqlCommand cmd2 = new SqlCommand();

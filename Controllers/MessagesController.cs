@@ -236,6 +236,7 @@ namespace ChatBotSample
                 DButil.HistoryLog("* activity.Type : " + activity.ChannelData);
                 DButil.HistoryLog("* activity.Recipient.Id : " + activity.Recipient.Id);
                 DButil.HistoryLog("* activity.ServiceUrl : " + activity.ServiceUrl);
+                
             }
             else if (activity.Type == ActivityTypes.Message)
             {
