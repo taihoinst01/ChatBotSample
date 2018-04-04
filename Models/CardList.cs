@@ -29,5 +29,6 @@ namespace ChatBotSample.Models
         public String cardValue;
         //public String card_order_no;
         public int card_order_no;
+        public string bgColor;
     }
 }
