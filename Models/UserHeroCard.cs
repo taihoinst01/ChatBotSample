@@ -30,5 +30,8 @@ namespace ChatBotSample.Models
         [Newtonsoft.Json.JsonProperty(PropertyName = "card_cnt")]
         public int Card_cnt { get; set; }
 
+        [Newtonsoft.Json.JsonProperty(PropertyName = "bgColor")]
+        public string BgColor { get; set; }
+
     }
 }

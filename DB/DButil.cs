@@ -271,7 +271,7 @@ namespace ChatBotSample.DB
         }
 
 
-        public Attachment getAttachmentFromDialog(DialogList dlg, Activity activity)
+        public Attachment getAttachmentFromDialog(DialogList dlg, Activity activity, String bgColor)
         {
             Attachment returnAttachment = new Attachment();
             ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
@@ -398,7 +398,8 @@ namespace ChatBotSample.DB
                         Images = cardImages,
                         Buttons = cardButtons,
                         Card_division = cardDiv,
-                        Card_value = cardVal
+                        Card_value = cardVal,
+                        BgColor = bgColor
                     };
                     returnAttachment = plCard.ToAttachment();
                 }
@@ -409,7 +410,8 @@ namespace ChatBotSample.DB
                     {
                         Title = dlg.cardTitle,
                         Images = cardImages,
-                        Buttons = cardButtons
+                        Buttons = cardButtons,
+                        BgColor = bgColor
                     };
                     returnAttachment = plCard.ToAttachment();
                 }
@@ -423,7 +425,8 @@ namespace ChatBotSample.DB
                         Images = cardImages,
                         Buttons = cardButtons,
                         Card_division = cardDiv,
-                        Card_value = cardVal
+                        Card_value = cardVal,
+                        BgColor = bgColor
                     };
                     returnAttachment = plCard.ToAttachment();
                 }
@@ -436,7 +439,7 @@ namespace ChatBotSample.DB
         }
 
 
-        public Attachment getAttachmentFromDialog(CardList card, Activity activity)
+        public Attachment getAttachmentFromDialog(CardList card, Activity activity, String bgColor)
         {
             ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
             Attachment returnAttachment = new Attachment();
@@ -555,7 +558,8 @@ namespace ChatBotSample.DB
                     {
                         Title = card.cardTitle,
                         Images = cardImages,
-                        Buttons = cardButtons
+                        Buttons = cardButtons,
+                        BgColor = bgColor
                     };
                     returnAttachment = plCard.ToAttachment();
                 }
@@ -572,7 +576,8 @@ namespace ChatBotSample.DB
                             Images = cardImages,
                             Buttons = cardButtons,
                             Card_division = cardDiv,
-                            Card_value = cardVal
+                            Card_value = cardVal,
+                            BgColor = bgColor
                         };
                         returnAttachment = plCard.ToAttachment();
                     }
@@ -586,7 +591,8 @@ namespace ChatBotSample.DB
                             Images = cardImages,
                             Buttons = cardButtons,
                             Card_division = cardDiv,
-                            Card_value = cardVal
+                            Card_value = cardVal,
+                            BgColor = bgColor
                         };
                         returnAttachment = plCard.ToAttachment();
                     }

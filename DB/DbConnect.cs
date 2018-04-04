@@ -1094,5 +1094,48 @@ namespace ChatBotSample.DB
                 return entityarr;
             }
         }
+
+        public string SelectBgColor(string diviName)
+        {
+            SqlDataReader rdr = null;
+            char sp = ',';
+            string[] diviNameArr = diviName.Split(sp);
+            string queryDiviName = "";
+            string bgColor = "";
+
+            for (int i=0;i < diviNameArr.Length;i++)
+            {
+                if (i==0)
+                {
+                    queryDiviName = queryDiviName + "'" + diviNameArr[i] + "'";
+                }
+                else
+                {
+                    queryDiviName = queryDiviName + ",'" + diviNameArr[i]+"'";
+                }
+            }
+
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+
+                cmd.CommandText += "	SELECT BG_COLOR FROM    					    "; 
+                cmd.CommandText += "	TBL_CHAT_BOT_BG_COLOR                           ";
+                cmd.CommandText += "	WHERE DIVI_NAME IN ("+ queryDiviName+")         "; 
+
+                rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (rdr.Read())
+                {
+                    if (bgColor=="")
+                    {
+                        bgColor = rdr["BG_COLOR"] as string;
+                    }
+                }
+            }
+            return bgColor;
+        }
     }
 }

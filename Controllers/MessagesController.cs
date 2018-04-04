@@ -78,6 +78,8 @@ namespace ChatBotSample
         public static DbConnect db = new DbConnect();
         public static DButil dbutil = new DButil();
 
+        public static string bgColor = "";
+
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
 
@@ -93,6 +95,11 @@ namespace ChatBotSample
             Activity reply2 = activity.CreateReply();
             Activity reply3 = activity.CreateReply();
             Activity reply4 = activity.CreateReply();
+
+            // 채팅창 화면 색상 변경
+            //String activity_Text = activity.Text;
+            //Debug.WriteLine("* activity_Text : " + activity.Text);
+
 
             // Activity 값 유무 확인하는 익명 메소드
             Action<Activity> SetActivity = (act) =>
@@ -201,7 +208,7 @@ namespace ChatBotSample
                     {
                         foreach (CardList tempcard in dialogs.dialogCard)
                         {
-                            tempAttachment = dbutil.getAttachmentFromDialog(tempcard, activity);
+                            tempAttachment = dbutil.getAttachmentFromDialog(tempcard, activity, bgColor);
                             initReply.Attachments.Add(tempAttachment);
                         }
                     }
@@ -220,7 +227,7 @@ namespace ChatBotSample
                         }
                         else
                         {
-                            tempAttachment = dbutil.getAttachmentFromDialog(dialogs, activity);
+                            tempAttachment = dbutil.getAttachmentFromDialog(dialogs, activity, bgColor);
                             initReply.Attachments.Add(tempAttachment);
                         }
                     }
@@ -317,6 +324,13 @@ namespace ChatBotSample
                         DButil.HistoryLog("fullentity : " + fullentity);
                         if (!string.IsNullOrEmpty(fullentity) || !fullentity.Equals(""))
                         {
+
+                            //단어로 챗봇창 배경화면 구하기
+                            bgColor = db.SelectBgColor(fullentity);
+                            Debug.WriteLine("* bgColor : " + bgColor);
+
+
+
                             if (!String.IsNullOrEmpty(luisEntities))
                             {
                                 //entity 길이 비교
@@ -412,7 +426,7 @@ namespace ChatBotSample
                                 else
                                 {
                                     DButil.HistoryLog("facebook dlg.dlgId : " + dlg.dlgId);
-                                    tempAttachment = dbutil.getAttachmentFromDialog(dlg, activity);
+                                    tempAttachment = dbutil.getAttachmentFromDialog(dlg, activity, bgColor);
                                     commonReply.Attachments.Add(tempAttachment);
 
                                 }
@@ -504,6 +518,7 @@ namespace ChatBotSample
                         replyresult = "";
                         recommendResult = "";
                     }
+                    Debug.WriteLine("* bgColor33 : " + bgColor);
                 }
                 catch (Exception e)
                 {
@@ -552,7 +567,7 @@ namespace ChatBotSample
                 finally
                 {
                     if (reply1.Attachments.Count != 0 || reply1.Text != "")
-                    {
+                    { 
                         await connector.Conversations.SendToConversationAsync(reply1);
                     }
                     if (reply2.Attachments.Count != 0 || reply2.Text != "")
