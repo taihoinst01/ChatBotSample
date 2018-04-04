@@ -566,6 +566,7 @@ namespace ChatBotSample
                 }
                 finally
                 {
+                    bgColor = "";
                     if (reply1.Attachments.Count != 0 || reply1.Text != "")
                     { 
                         await connector.Conversations.SendToConversationAsync(reply1);
