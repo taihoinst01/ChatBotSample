@@ -99,6 +99,9 @@ namespace ChatBotSample
             // 채팅창 화면 색상 변경
             //String activity_Text = activity.Text;
             DButil.HistoryLog("* activity_Recipient : " + activity.Recipient);
+            DButil.HistoryLog("* activity_type : " + activity.Type);
+            DButil.HistoryLog("* activity_text : " + activity.Text);
+            DButil.HistoryLog("* activity_textFormat : " + activity.TextFormat);
 
 
             // Activity 값 유무 확인하는 익명 메소드
