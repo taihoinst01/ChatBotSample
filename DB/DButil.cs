@@ -280,9 +280,10 @@ namespace ChatBotSample.DB
 
                 if (!activity.ChannelId.Equals("facebook"))
                 {
-                    HeroCard plCard = new HeroCard()
+                    HeroCard plCard = new UserHeroCard()
                     {
                         Title = dlg.cardTitle,
+                        BgColor = bgColor,
                         Text = dlg.cardText
                     };
                     returnAttachment = plCard.ToAttachment();
