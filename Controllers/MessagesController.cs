@@ -522,6 +522,8 @@ namespace ChatBotSample
                         recommendResult = "";
                     }
                     Debug.WriteLine("* bgColor33 : " + bgColor);
+                    //설정 배경색 초기화
+                    bgColor = "";
                 }
                 catch (Exception e)
                 {
@@ -569,7 +571,7 @@ namespace ChatBotSample
                 }
                 finally
                 {
-                    bgColor = "";
+                    
                     if (reply1.Attachments.Count != 0 || reply1.Text != "")
                     { 
                         await connector.Conversations.SendToConversationAsync(reply1);
