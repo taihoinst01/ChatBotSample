@@ -1123,7 +1123,7 @@ namespace ChatBotSample.DB
 
                 cmd.CommandText += "	SELECT BG_COLOR FROM    					    "; 
                 cmd.CommandText += "	TBL_CHAT_BOT_BG_COLOR                           ";
-                cmd.CommandText += "	WHERE DIVI_NAME IN ("+ queryDiviName+")         "; 
+                cmd.CommandText += "	WHERE (DIVI_NAME IN ("+ queryDiviName+ ") OR DIVI_ENG_NAME IN (" + queryDiviName + "))        "; 
 
                 rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
