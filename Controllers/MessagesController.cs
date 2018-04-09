@@ -98,10 +98,22 @@ namespace ChatBotSample
 
             // 채팅창 화면 색상 변경
             //String activity_Text = activity.Text;
-            DButil.HistoryLog("* activity_Recipient : " + activity.Recipient);
-            DButil.HistoryLog("* activity_type : " + activity.Type);
-            DButil.HistoryLog("* activity_text : " + activity.Text);
-            DButil.HistoryLog("* activity_textFormat : " + activity.TextFormat);
+            DButil.HistoryLog("* activity_TextFormat        : " + activity.TextFormat);
+            DButil.HistoryLog("* activity_AttachmentLayout  : " + activity.AttachmentLayout);
+            DButil.HistoryLog("* activity_TopicName         : " + activity.TopicName);
+            DButil.HistoryLog("* activity_ChannelId         : " + activity.ChannelId);
+            DButil.HistoryLog("* activity_Text              : " + activity.Text);
+            DButil.HistoryLog("* activity_Speak             : " + activity.Speak);
+            DButil.HistoryLog("* activity_InputHint         : " + activity.InputHint);
+            DButil.HistoryLog("* activity_Summary           : " + activity.Summary);
+            DButil.HistoryLog("* activity_Action            : " + activity.Action);
+            DButil.HistoryLog("* activity_ReplyToId         : " + activity.ReplyToId);
+            DButil.HistoryLog("* activity_Name              : " + activity.Name);
+            DButil.HistoryLog("* activity_Locale            : " + activity.Locale);
+            DButil.HistoryLog("* activity_ServiceUrl        : " + activity.ServiceUrl);
+            DButil.HistoryLog("* activity_Code              : " + activity.Code);
+            DButil.HistoryLog("* activity_Id                : " + activity.Id);
+            DButil.HistoryLog("* activity_Type              : " + activity.Type);
 
 
             // Activity 값 유무 확인하는 익명 메소드
