@@ -143,6 +143,9 @@ namespace ChatBotSample
             
             if (activity.Type == ActivityTypes.ConversationUpdate && activity.MembersAdded.Any(m => m.Id == activity.Recipient.Id))
             {
+                string ttttttttttMent = activity.Text;
+                Debug.WriteLine("ttttttttttMent :::: " + ttttttttttMent);
+
                 startTime = DateTime.Now;
                 //activity.ChannelId = "facebook";
                 //파라메터 호출
@@ -270,6 +273,9 @@ namespace ChatBotSample
                     channelID = activity.ChannelId;
                     string orgMent = activity.Text;
 
+
+                    string ttttttttttMent = activity.Text;
+                    Debug.WriteLine("ttttttttttMent :::: else   : " + ttttttttttMent);
 
                     apiFlag = "COMMON";
 
