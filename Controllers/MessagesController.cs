@@ -144,7 +144,7 @@ namespace ChatBotSample
             if (activity.Type == ActivityTypes.ConversationUpdate && activity.MembersAdded.Any(m => m.Id == activity.Recipient.Id))
             {
                 string ttttttttttMent = activity.Text;
-                Debug.WriteLine("ttttttttttMent :::: " + ttttttttttMent);
+                DButil.HistoryLog("ttttttttttMent :::: " + ttttttttttMent);
 
                 startTime = DateTime.Now;
                 //activity.ChannelId = "facebook";
@@ -275,7 +275,7 @@ namespace ChatBotSample
 
 
                     string ttttttttttMent = activity.Text;
-                    Debug.WriteLine("ttttttttttMent :::: else   : " + ttttttttttMent);
+                    DButil.HistoryLog("ttttttttttMent :::: else   : " + ttttttttttMent);
 
                     apiFlag = "COMMON";
 
